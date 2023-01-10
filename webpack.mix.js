@@ -12,6 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+    .sass('resources/sass/app.scss', 'public/css')
+    .js('resources/js/sb-admin-2.js', 'public/js')
+    .copy('resources/css/sb-admin-2.min.css', 'public/css')
+    .minify('public/css/app.css', 'public/css/app.min.css', true)
+    .minify('public/js/app.js', 'public/js/app.min.js', true)
+    .minify('public/js/sb-admin-2.js', 'public/js/sb-admin-2.min.js', true)
+

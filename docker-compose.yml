@@ -87,6 +87,6 @@ services:
             PGADMIN_PASSWORD: ${DB_PASSWORD}
             PGADMIN_PRIMARY_PASSWORD: ${DB_PASSWORD}
             PGADMIN_PRIMARY_USER: ${DB_USERNAME}
-            PGADMIN_DEFAULT_EMAIL: admin@training.pl
+            PGADMIN_DEFAULT_EMAIL: admin@fitme.pl
             PGADMIN_DEFAULT_PASSWORD: password
             PGADMIN_LISTEN_PORT: 5050
