@@ -14,9 +14,9 @@ volumes:
         driver: local
 
 services:
-    fit_me:
+    fit_me_app:
         build: ./
-        container_name: fit_me
+        container_name: fit_me_app
         volumes:
             - ./:/var/www/html:cached
             - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
@@ -54,7 +54,7 @@ services:
         networks:
             - fit_me_network
         links:
-            - fit_me
+            - fit_me_app
 
     fit_me_redis:
         image: redis:latest

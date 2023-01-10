@@ -13,7 +13,7 @@ server {
     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass training_app_app:9000;
+        fastcgi_pass fit_me_app:9000;
         fastcgi_index index.php;
         fastcgi_send_timeout 300;
         fastcgi_read_timeout 300;
