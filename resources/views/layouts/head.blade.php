@@ -16,4 +16,5 @@
 <link href={{asset('css/sb-admin-2.min.css')}} rel="stylesheet">
 @yield('scripts')
 @stack('styles')
+@livewireStyles
 

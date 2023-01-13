@@ -11,3 +11,18 @@
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
+
+
+
+.fade-loader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(224, 224, 224, 0.3);
+    display: block;
+    z-index: 1;
+}
+.sortable-drag {
+    border:solid 2px red;
+}

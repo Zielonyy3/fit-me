@@ -14,8 +14,10 @@
                     <h1 class="h3 mb-0 text-gray-800">@yield('title', 'Name')</h1>
                     @yield('title_section')
                 </div>
-                <div class="row">
-                    @yield('content')
+                <div class="card shadow mb-4">
+                    <div class="card-body pt-4">
+                        @yield('content')
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,13 +34,14 @@
 @stack('modals')
 @include('layouts.backend.modals.logout')
 
-
-@yield('scripts')
-@stack('scripts')
-
+@livewireScripts
 <script src="{{asset('js/app.min.js') }}"></script>
 <script src={{asset("vendor/bootstrap/js/bootstrap.js")}}></script>
 
 {{--<script src={{asset("vendor/jquery-easing/jquery.easing.min.js")}}></script>--}}
 <script src={{asset("js/sb-admin-2.min.js")}}></script>
+
+
+@yield('scripts')
+@stack('scripts')
 </html>

@@ -14,6 +14,9 @@ import 'bootstrap';
 import axios from 'axios';
 window.axios = axios;
 
+import Sortable from "sortablejs";
+window.Sortable = Sortable;
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
