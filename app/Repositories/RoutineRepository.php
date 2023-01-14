@@ -24,7 +24,7 @@ class RoutineRepository extends BaseRepository implements RoutineRepositoryContr
             });
         }
 
-        return $routines->paginate(perPage($params['per_page'] ?? null));
+        return $routines->paginate(perPage($params['per_page'] ?? null), ['*'], 'page', $params['page'] ?? 1);
     }
 
 }

@@ -16,14 +16,14 @@ class ExerciseRepository extends BaseRepository implements ExerciseRepositoryCon
 
     public function search(array $params): LengthAwarePaginator
     {
-        $routines = $this->model->newQuery();
+        $exercises = $this->model->newQuery();
         if (!empty($params['search'])) {
             $querySearch = $params['search'];
-            $routines->where(function (Builder $query) use ($querySearch) {
+            $exercises->where(function (Builder $query) use ($querySearch) {
                 $query->where('name', 'ILIKE', "%$querySearch%");
             });
         }
-        return $routines->paginate(perPage($params['per_page'] ?? null), ['*'], 'page', $params['page'] ?? 1);
+        return $exercises->paginate(perPage($params['per_page'] ?? null), ['*'], 'page', $params['page'] ?? 1);
     }
 
 }

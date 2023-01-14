@@ -1,6 +1,6 @@
 <div class="exercises-grid">
     <div class="row">
-        <h class="card-title">{{__('common.exercises')}}</h>
+        <h class="card-title">{{$title}}</h>
     </div>
     <div class="row">
         <div class="col-12">
@@ -12,8 +12,9 @@
         <div wire:loading.delay.shorter>
             <x-ui.spinning-loader />
         </div>
-        @foreach($exercises as $exercise)
-            <x-exercise-card :exercise="$exercise" :width="9"/>
+        @foreach($records as $record)
+            {!! $classInstance->renderCard($record) !!}
+{{--            <x-exercise-card :exercise="$record" :width="9"/>--}}
         @endforeach
         @include('components.ui.pagination')
     </div>

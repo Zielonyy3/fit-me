@@ -12,4 +12,5 @@ return [
     'drag_and_drop_here' => 'Przeciągnij i upuść tutaj',
     'drag_and_drop_exercise_here' => 'Przeciągnij i upuść ćwiczenie tutaj',
     'save' => 'Zapisz',
+    'routine' => 'Rutyny',
 ];

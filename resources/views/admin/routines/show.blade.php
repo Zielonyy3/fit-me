@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col-6 border-left">
-                <livewire:exercises-grid/>
+                <livewire:search-grid class="App\Http\Livewire\SearchGrids\SearchGridExercise"/>
             </div>
 
         </div>
