@@ -17,6 +17,7 @@ class SearchGrid extends Component
     public string $title = '';
     public string $pageName = 'page';
     public $renderCard = null;
+    public array $cardParams = [];
     private LengthAwarePaginator $records;
     private ?SearchGridContract $classInstance = null;
 

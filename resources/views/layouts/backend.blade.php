@@ -4,30 +4,23 @@
     @include('layouts.head')
 </head>
 <body id="page-top">
-<div id="wrapper">
+<div class="wrapper">
     @include('layouts.backend.sidebar')
-    <div id="content-wrapper" class="d-flex flex-column">
-        <div id="content">
-            @include('layouts.backend.navbar')
-            <div class="container-fluid">
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">@yield('title', 'Name')</h1>
-                    @yield('title_section')
-                </div>
-                <div class="card shadow mb-4">
-                    <div class="card-body pt-4">
-                        @yield('content')
-                    </div>
+    @include('layouts.backend.navbar')
+    <div class="page-wrapper">
+        <div class="container-xl">
+            @include('layouts.backend.page-header')
+        </div>
+        <div class="page-body">
+            <div class="container-xl">
+                <div class="row row-deck row-cards">
+                    @yield('content')
                 </div>
             </div>
         </div>
         @include('layouts.backend.footer')
     </div>
-
 </div>
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
 </body>
 
 @yield('modals')

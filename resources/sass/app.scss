@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
+//@import url('https://fonts.bunny.net/css?family=Nunito');
 
 // Variables
 @import 'variables';
@@ -7,12 +7,19 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
+//@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+//@import '~@fortawesome/fontawesome-free/scss/regular';
+//@import '~@fortawesome/fontawesome-free/scss/solid';
+//@import '~@fortawesome/fontawesome-free/scss/brands';
 
+i.ti {
+    font-size: 20px;
+    margin-right: 7px;
 
+    &.mr-0 {
+        margin-right: 0;
+    }
+}
 
 .fade-loader {
     position: absolute;
@@ -30,10 +37,9 @@
 
 .planned-exercise {
     input, select {
-        font-size: .7em;
+        font-size: .9em;
         min-width: 50px;
     }
-
 }
 
 #drag-drop-wrapper {
@@ -52,3 +58,6 @@
     }
 }
 
+.card.selected-card {
+    box-shadow: rgb(30 41 59 / 90%) 0 1px 5px 0
+}

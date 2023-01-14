@@ -13,9 +13,11 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .js('resources/js/sb-admin-2.js', 'public/js')
-    .copy('resources/css/sb-admin-2.min.css', 'public/css')
+    // .js('resources/js/sb-admin-2.js', 'public/js')
+    .copy('resources/css/tabler.min.css', 'public/css')
+    .copy('resources/css/tabler-vendors.min.css', 'public/css')
+    .copy('resources/js/tabler.min.js', 'public/js')
     .minify('public/css/app.css', 'public/css/app.min.css', true)
     .minify('public/js/app.js', 'public/js/app.min.js', true)
-    .minify('public/js/sb-admin-2.js', 'public/js/sb-admin-2.min.js', true)
+    // .minify('public/js/sb-admin-2.js', 'public/js/sb-admin-2.min.js', true)
 

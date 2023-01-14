@@ -12,10 +12,11 @@
 
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+{{--<link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">--}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
 <link href={{asset('css/app.min.css')}} rel="stylesheet">
-<link href={{asset('css/sb-admin-2.min.css')}} rel="stylesheet">
-@yield('scripts')
+<link href={{asset('css/tabler.min.css')}} rel="stylesheet">
+<link href={{asset('css/tabler-vendors.min.css')}} rel="stylesheet">
 @stack('styles')
 @livewireStyles
 

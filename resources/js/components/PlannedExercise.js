@@ -8,7 +8,7 @@ template.innerHTML = `
     <div class="row card-header border-0">
         <div class="d-flex align-items-center col-md-10 px-0">
             <div class="d-flex align-items-center w-100 justify-content-start">
-                <i class="handle fa-solid fa-bars" style="cursor: pointer;"></i>
+                <i class="handle ti ti-menu-2" style="cursor: pointer;"></i>
                 <p class="m-0 ml-2 section-name" style="font-size: .9em;">__NAME__</p>
             </div>
             <div class="d-flex align-items-center ml-2 w-100">
@@ -24,7 +24,7 @@ template.innerHTML = `
         </div>
         <div class="d-flex align-items-center justify-content-end col-md-2 px-0">
             <button class="btn btn-sm btn-danger delete-exercise-btn" type="button">
-                <i style="font-size: 14px" class="fa-solid fa-trash"></i>
+                <i class="ti ti-trash mr-0"></i>
             </button>
         </div>
     </div>

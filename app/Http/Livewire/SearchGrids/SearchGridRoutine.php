@@ -20,12 +20,13 @@ class SearchGridRoutine implements SearchGridContract
         return app(RoutineRepositoryContract::class)->search($params);
     }
 
-    public function renderCard(Model $record): string
+    public function renderCard(Model $record, array $cardParams): string
     {
-        $card = new RoutineCard(
-            routine: $record,
-            width: 9,
-        );
+        $params = array_merge($cardParams, [
+            'routine' => $record,
+            'width' => 9,
+        ]);
+        $card = new RoutineCard(...$params);
         return $card->render()->with($card->data());
     }
 }

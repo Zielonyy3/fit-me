@@ -32,4 +32,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Routine::class, 'owner_id', 'id');
     }
+
+    public function getNameAttribute(): string
+    {
+        return $this->first_name . ' ' . $this->last_name;
+
+    }
+
+    public function getInitialsAttribute(): string
+    {
+        return substr($this->first_name, 0, 1) . '' . substr($this->last_name, 0, 1);
+    }
 }
