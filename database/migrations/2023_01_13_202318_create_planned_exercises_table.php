@@ -21,12 +21,12 @@ return new class extends Migration
             $table->foreignId('exercise_id')
                 ->constrained()
                 ->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('name');
-            $table->integer('sets');
-            $table->enum('target_type', \App\Enums\TargetType::asArray());
-            $table->float('target');
-            $table->integer('rest_time');
-            $table->text('notes');
+            $table->integer('sets')->default(1);
+            $table->enum('target_type', \App\Enums\TargetType::asArray())->default(\App\Enums\TargetType::Weight);
+            $table->float('target')->default(1);
+            $table->integer('rest_time')->default(1);
+            $table->text('notes')->nullable();
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

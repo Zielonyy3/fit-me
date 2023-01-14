@@ -25,6 +25,7 @@ class RoutineSaveRequest extends FormRequest
     {
         return new RoutineSaveDto([
             'name' => $this->input('name'),
+            'owner_id' => Auth::user()->getKey(),
             'description' => $this->input('description'),
         ]);
     }

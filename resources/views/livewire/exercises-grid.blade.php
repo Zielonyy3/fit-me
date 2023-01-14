@@ -13,10 +13,7 @@
             <x-ui.spinning-loader />
         </div>
         @foreach($exercises as $exercise)
-            @php($id = $loop->index +1)
-            <div class="col-12 col-lg-4 col-xl-3 my-2" data-id="{{$id}}">
-                <x-exercise-card :exercise="$exercise" :width="10" />
-            </div>
+            <x-exercise-card :exercise="$exercise" :width="9"/>
         @endforeach
         @include('components.ui.pagination')
     </div>

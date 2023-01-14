@@ -21121,5 +21121,25 @@ readers do not read off random characters that represent icons */
 }
 
 .sortable-drag {
-  border: solid 2px red;
+  transform: scale(0.6);
+}
+
+.planned-exercise input, .planned-exercise select {
+  font-size: 0.7em;
+  min-width: 50px;
+}
+
+#drag-drop-wrapper {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+#drag-drop-wrapper #drop-box {
+  margin-left: 100px;
+  width: 20em;
+  line-height: 10em;
+  border: 1px dashed gray;
+  text-align: center;
+  color: gray;
+  border-radius: 7px;
 }

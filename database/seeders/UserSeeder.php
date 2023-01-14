@@ -22,9 +22,5 @@ class UserSeeder extends Seeder
             'email' => 'admin@fitme.pl',
         ]);
 
-        Routine::factory(10)->create([
-            'owner_id' => $admin->getKey(),
-        ]);
-
     }
 }

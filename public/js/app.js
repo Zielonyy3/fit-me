@@ -3262,6 +3262,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.PlannedExercise = _components_PlannedExercise__WEBPACK_IMPORTED_MODULE_1__["default"];
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+    'Authorization': 'Bearer ' + $('meta[name="api_token"]').attr('content')
+  }
+});
 
 /***/ }),
 
@@ -3334,18 +3340,48 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var template = document.createElement('template');
-template.innerHTML = "\n<div class=\"card planned-exercise col-12 my-1\"\n     data-id=\"__VAL__\">\n    <div class=\"row card-header border-0\">\n        <div class=\"d-flex align-items-center col-md-8\">\n            <i class=\"handle fa-solid fa-bars\" style=\"cursor: pointer;\"></i>\n            <p class=\"m-0 ml-3 section-name\">__NAME__</p>\n        </div>\n        <div class=\"d-flex justify-content-end col-md-4\">\n\n        </div>\n    </div>\n</div>";
+template.innerHTML = "\n<div class=\"card planned-exercise col-12 my-1\"\n     data-id=\"__VAL__\"\n     data-planned-exercise-id=\"__VAL__\"\n     data-exercise-id=\"__VAL__\"\n     >\n    <div class=\"row card-header border-0\">\n        <div class=\"d-flex align-items-center col-md-10 px-0\">\n            <div class=\"d-flex align-items-center w-100 justify-content-start\">\n                <i class=\"handle fa-solid fa-bars\" style=\"cursor: pointer;\"></i>\n                <p class=\"m-0 ml-2 section-name\" style=\"font-size: .9em;\">__NAME__</p>\n            </div>\n            <div class=\"d-flex align-items-center ml-2 w-100\">\n                <input name=\"sets\" placeholder=\"sets\" class=\"mx-1 form-control\" autocomplete=\"off\" max=\"99\" min=\"1\" step=\"1\">\n                <span class=\"multiplier-symbol\">X</span>\n                <input name=\"target\" placeholder=\"target\" class=\"mx-1 form-control\" autocomplete=\"off\" max=\"1000\" min=\"1\">\n                <select name=\"target_type\" id=\"target_type\" class=\"form-control mx-2\">\n                    <option value=\"weight\">weight</option>\n                    <option value=\"time\">time</option>\n                </select>\n                <input name=\"rest_time\" placeholder=\"rest_time\" class=\"mx-1 form-control\" autocomplete=\"off\" max=\"1000\" min=\"1\" step=\"1\" style=\"min-width: 70px\">\n            </div>\n        </div>\n        <div class=\"d-flex align-items-center justify-content-end col-md-2 px-0\">\n            <button class=\"btn btn-sm btn-danger delete-exercise-btn\" type=\"button\">\n                <i style=\"font-size: 14px\" class=\"fa-solid fa-trash\"></i>\n            </button>\n        </div>\n    </div>\n</div>";
 var PlannedExercise = /*#__PURE__*/function () {
   function PlannedExercise() {
     _classCallCheck(this, PlannedExercise);
   }
   _createClass(PlannedExercise, null, [{
     key: "render",
-    value: function render(id, name) {
+    value: function render(_ref) {
+      var _ref$plannedExerciseI = _ref.plannedExerciseId,
+        plannedExerciseId = _ref$plannedExerciseI === void 0 ? '' : _ref$plannedExerciseI,
+        exerciseId = _ref.exerciseId,
+        name = _ref.name,
+        _ref$sets = _ref.sets,
+        sets = _ref$sets === void 0 ? 1 : _ref$sets,
+        _ref$target_type = _ref.target_type,
+        target_type = _ref$target_type === void 0 ? 'weight' : _ref$target_type,
+        _ref$target = _ref.target,
+        target = _ref$target === void 0 ? 1 : _ref$target,
+        _ref$rest_time = _ref.rest_time,
+        rest_time = _ref$rest_time === void 0 ? 45 : _ref$rest_time;
       var $newEl = $($(template).get(0).cloneNode(true).innerHTML);
-      $newEl.attr('data-id', id);
+      $newEl.attr('data-id', Math.floor(Math.random() * 1000000));
+      $newEl.attr('data-planned-exercise-id', plannedExerciseId);
+      $newEl.attr('data-exercise-id', exerciseId);
       $newEl.find('p.section-name').text(name);
+      $newEl.find('[name="sets"]').val(sets);
+      $newEl.find('[name="target_type"]').val(target_type);
+      $newEl.find('[name="target"]').val(target);
+      $newEl.find('[name="rest_time"]').val(rest_time);
       return $newEl;
+    }
+  }, {
+    key: "getData",
+    value: function getData($el) {
+      return {
+        'planned_exercise_id': $el.attr('data-planned-exercise-id'),
+        'exercise_id': $el.attr('data-exercise-id'),
+        'sets': $el.find('[name="sets"]').val(),
+        'target_type': $el.find('[name="target_type"]').val(),
+        'target': $el.find('[name="target"]').val(),
+        'rest_time': $el.find('[name="rest_time"]').val()
+      };
     }
   }]);
   return PlannedExercise;
