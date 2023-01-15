@@ -17,6 +17,11 @@ class ExerciseController extends Controller
     }
 
 
+    public function index()
+    {
+        return view('admin.exercises.index');
+    }
+
     public function store(ExerciseSaveRequest $request): RedirectResponse
     {
         $exercise = $this->exerciseRepository->create($request->data()->toArray());

@@ -17,7 +17,8 @@
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-auto">
-                            {{--                <span class="avatar avatar-md" style="background-image: url({{$user->image}})"></span>--}}
+{{--                                            <span class="avatar avatar-md" style="background-image: url({{$user->image}})"></span>--}}
+                                            <span class="avatar avatar-md" style="background-image: url({{asset('img/user_profile.jpeg')}})"></span>
                         </div>
                         <div class="col">
                             <div class="mb-3">

@@ -35,4 +35,11 @@ return [
     'edit_user' => 'Edytuj użytkownika',
     'chat' => 'Czat',
     'payments' => 'Płatności',
+    'no_results_found' => 'Nie znaleziono wyników',
+    'actions' => 'Akcje',
+    'delete' => 'Usuń',
+    'created_at' => 'Utworzony',
+    'updated_at' => 'Zaktualizowany',
+    'preview' => 'Podgląd',
+    'owner' => 'Właściciel',
 ];

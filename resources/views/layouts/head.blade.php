@@ -19,5 +19,8 @@
 <link href={{asset('css/tabler-vendors.min.css')}} rel="stylesheet">
 <link href={{asset('css/select2.min.css')}} rel="stylesheet">
 @stack('styles')
+<style>
+    [x-cloak] { display: none !important; }
+</style>
 @livewireStyles
 

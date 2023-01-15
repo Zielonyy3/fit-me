@@ -19,9 +19,7 @@ class RoutineController extends Controller
 
     public function index(Request $request): View
     {
-        $params = $request->all();
-        $routines = $this->routineRepository->search($params);
-        return view('admin.routines.index', compact('routines'));
+        return view('admin.routines.index');
     }
 
     public function store(RoutineSaveRequest $request): RedirectResponse

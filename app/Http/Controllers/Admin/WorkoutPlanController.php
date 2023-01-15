@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WorkoutPlanSaveRequest;
-use App\Models\Routine;
 use App\Models\WorkoutPlan;
 use App\Repositories\Contracts\WorkoutPlanRepositoryContract;
 use Illuminate\Http\RedirectResponse;
@@ -19,9 +18,7 @@ class WorkoutPlanController extends Controller
 
     public function index(Request $request): View
     {
-        $params = $request->all();
-        $routines = $this->routineRepository->search($params);
-        return view('admin.workout-plans.index', compact('routines'));
+        return view('admin.workout-plans.index');
     }
 
     public function store(WorkoutPlanSaveRequest $request): RedirectResponse
