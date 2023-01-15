@@ -33,4 +33,6 @@ return [
     'first_name' => 'Imię',
     'last_name' => 'Nazwisko',
     'edit_user' => 'Edytuj użytkownika',
+    'chat' => 'Czat',
+    'payments' => 'Płatności',
 ];

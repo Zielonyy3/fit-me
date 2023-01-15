@@ -5,17 +5,12 @@
 @section('content')
     <div class="row mb-3">
         <div class="col-12">
-            <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-routine-modal">
-                <i class="ti ti-plus"></i>
-                <span class="text">{{__('common.add_routine')}}</span>
-            </a>
-            <a href="#" class="btn btn-primary btn-icon-split"
-               data-toggle="modal" data-target="#create-exercise-modal">
-                <i class="ti ti-plus"></i>
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-exercise-modal"> <i
+                    class="ti ti-plus"></i>
                 <span class="text">{{__('common.add_exercise')}}</span>
             </a>
-            <a href="#" class="btn btn-secondary btn-icon-split"
-               data-toggle="modal" data-target="#create-workout-plan-modal">
+            <a href="#" class="btn btn-secondary"
+               data-bs-toggle="modal" data-bs-target="#create-workout-plan-modal">
                 <i class="ti ti-plus"></i>
                 <span class="text">{{__('common.add_workout_plan')}}</span>
             </a>
@@ -38,8 +33,14 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-12 mb-3">
+            <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-routine-modal">
+                <i class="ti ti-plus"></i>
+                <span class="text">{{__('common.add_routine')}}</span>
+            </a>
+        </div>
         <div class="col-12">
-            <livewire:search-grid class="App\Http\Livewire\SearchGrids\SearchGridRoutine"/>
+            <livewire:search-grid :perPage="4" class="App\Http\Livewire\SearchGrids\SearchGridRoutine"/>
         </div>
     </div>
 @endsection

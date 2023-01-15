@@ -113,15 +113,76 @@
                         </span>
                     </a>
                 </li>
+
                 <li class="nav-item"
                     @class([
                         'nav-item',
-                        'active' => request()->is('admin/routines*')
+                        'active' => request()->is('users*')
                     ]) >
-                    <a class="nav-link" href="{{route('routines.index')}}">
+                    <a class="nav-link" href="{{route('users.index')}}">
+                        <i class="ti ti-message-circle"></i>
+                        <span class="nav-link-title">
+                            {{__('common.chat')}}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item border-top"
+                    @class([
+                        'nav-item',
+                        'active' => request()->is('workout-plans*')
+                    ]) >
+                    <a class="nav-link" href="{{route('workout-plans.index')}}">
                         <i class="ti ti-book-2"></i>
                         <span class="nav-link-title">
+                            {{__('common.workout_plans')}}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item"
+                    @class([
+                        'nav-item',
+                        'active' => request()->is('routines*')
+                    ]) >
+                    <a class="nav-link" href="{{route('routines.index')}}">
+                        <i class="ti ti-article"></i>
+                        <span class="nav-link-title">
                             {{__('common.routines')}}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item border-bottom"
+                    @class([
+                        'nav-item',
+                        'active' => request()->is('exercises*')
+                    ]) >
+                    <a class="nav-link" href="{{route('exercises.index')}}">
+                        <i class="ti ti-stretching"></i>
+                        <span class="nav-link-title">
+                            {{__('common.exercises')}}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item"
+                    @class([
+                        'nav-item',
+                        'active' => request()->is('users*')
+                    ]) >
+                    <a class="nav-link" href="{{route('users.index')}}">
+                        <i class="ti ti-users"></i>
+                        <span class="nav-link-title">
+                            {{__('common.clients')}}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item"
+                    @class([
+                        'nav-item',
+                        'active' => request()->is('users*')
+                    ]) >
+                    <a class="nav-link" href="{{route('users.index')}}">
+                        <i class="ti ti-cash"></i>
+                        <span class="nav-link-title">
+                            {{__('common.payments')}}
                         </span>
                     </a>
                 </li>
