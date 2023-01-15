@@ -9,10 +9,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Musonza\Chat\Traits\Messageable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
+    use Messageable;
 
     protected $fillable = [
         'name',
@@ -43,6 +47,13 @@ class User extends Authenticatable
     {
         return $this->first_name . ' ' . $this->last_name;
 
+    }
+
+    public function getParticipantDetailsAttribute()
+    {
+        return [
+            'name' => $this->name,
+        ];
     }
 
     public function getInitialsAttribute(): string

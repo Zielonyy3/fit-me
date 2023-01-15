@@ -3308,6 +3308,8 @@ window.axios = axios__WEBPACK_IMPORTED_MODULE_3__["default"];
 window.Sortable = sortablejs__WEBPACK_IMPORTED_MODULE_4__["default"];
 
 window.Select2 = (select2__WEBPACK_IMPORTED_MODULE_5___default());
+window.Alpine = Alpine;
+Alpine.start();
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**

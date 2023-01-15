@@ -117,9 +117,9 @@
                 <li class="nav-item"
                     @class([
                         'nav-item',
-                        'active' => request()->is('users*')
+                        'active' => request()->is('chats*')
                     ]) >
-                    <a class="nav-link" href="{{route('users.index')}}">
+                    <a class="nav-link" href="{{route('chats.index')}}">
                         <i class="ti ti-message-circle"></i>
                         <span class="nav-link-title">
                             {{__('common.chat')}}

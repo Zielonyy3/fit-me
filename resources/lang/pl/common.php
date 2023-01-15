@@ -42,4 +42,6 @@ return [
     'updated_at' => 'Zaktualizowany',
     'preview' => 'Podgląd',
     'owner' => 'Właściciel',
+    'conversations' => 'Konwersacje',
+    'leave' => 'Opuść',
 ];

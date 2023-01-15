@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ChatController;
 use App\Http\Controllers\Admin\RoutineController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\WorkoutPlanController;
@@ -31,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('exercises', ExerciseController::class);
     Route::resource('users', UserController::class);
     Route::resource('workout-plans', WorkoutPlanController::class);
+
+    Route::get('chats', [ChatController::class, 'index'])->name('chats.index');
 });
 
 

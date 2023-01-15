@@ -61,3 +61,20 @@ i.ti {
 .card.selected-card {
     box-shadow: rgb(30 41 59 / 90%) 0 1px 5px 0
 }
+
+.conversation-card {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    -moz-padding-start: calc(.75rem - 3px);
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.4285714;
+    color: inherit;
+    border: 1px solid #d9dbde;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
