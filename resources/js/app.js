@@ -9,3 +9,7 @@ $.ajaxSetup({
         'Authorization': 'Bearer ' + $('meta[name="api_token"]').attr('content'),
     }
 });
+
+$(".select2-global").select2({
+    width: '100%'
+});

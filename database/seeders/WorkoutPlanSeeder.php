@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Routine;
+use App\Models\PlannedRoutine;
 use App\Models\WorkoutPlan;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
@@ -19,7 +19,7 @@ class WorkoutPlanSeeder extends Seeder
 
         $workoutPlans = WorkoutPlan::factory(10)->create();
         foreach ($workoutPlans as $workoutPlan) {
-            $this->addPlannedRoutines($workoutPlan);
+            $this->addPlannedRoutines($workoutPlan, 5);
         }
     }
 
@@ -27,19 +27,14 @@ class WorkoutPlanSeeder extends Seeder
     {
         $faker = Factory::create();
         $lastEndDay = 1;
-        dump('start', $lastEndDay);
         for ($i = 1; $i <= $times; $i++) {
-            $routine = Routine::all()->random();
-            dump($lastEndDay);
             $newLastEndDay = $faker->numberBetween($lastEndDay, $lastEndDay + 21);
-            $workoutPlan->routines()->attach($routine->getKey(), [
-                'notes' => $faker->realText(100),
+            PlannedRoutine::factory()->create([
+                'workout_plan_id' => $workoutPlan->getKey(),
                 'start_day' => $lastEndDay,
                 'end_day' => $newLastEndDay,
             ]);
             $lastEndDay = $newLastEndDay;
         }
-        dump('koniec', $lastEndDay);
-
     }
 }

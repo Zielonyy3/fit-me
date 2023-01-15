@@ -26,4 +26,11 @@ return [
     'notes' => 'Notatki',
     'add' => 'Dodaj',
     'planned_routines' => 'Zaplanowane rutyny',
+    'plany_treningowe' => 'Zaplanowane rutyny',
+    'workout_plans' => 'Plany treningowe',
+    'email' => 'Email',
+    'bio' => 'bio',
+    'first_name' => 'Imię',
+    'last_name' => 'Nazwisko',
+    'edit_user' => 'Edytuj użytkownika',
 ];

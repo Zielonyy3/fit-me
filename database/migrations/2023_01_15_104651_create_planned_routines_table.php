@@ -13,27 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('workout_plans', function (Blueprint $table) {
+        Schema::create('planned_routines', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->unsignedBigInteger('owner_id');
-            $table->timestamps();
-
-
-            $table->foreign('owner_id')
-                ->references('id')->on('users')
-                ->cascadeOnDelete()->cascadeOnUpdate();
-        });
-
-        Schema::create('user_workout_plan', function (Blueprint $table) {
-            $table->foreignId('user_id')
-                ->constrained()
-                ->cascadeOnDelete()->cascadeOnUpdate();
+            $table->integer('start_day');
+            $table->integer('end_day');
 
             $table->foreignId('workout_plan_id')
                 ->constrained()
                 ->cascadeOnDelete()->cascadeOnUpdate();
+
+            $table->foreignId('routine_id')
+                ->constrained()
+                ->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string('name')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
@@ -45,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workout_plans');
+        Schema::dropIfExists('planned_routines');
     }
 };

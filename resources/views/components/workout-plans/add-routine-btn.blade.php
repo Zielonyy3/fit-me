@@ -26,14 +26,15 @@
                     const currentRoutine = e.target.closest('.routine-card')
                     currentRoutine.classList.add('selected-card');
                     const routineId = currentRoutine.parentElement.dataset.id;
-                    toggleBtns(false);
+                    toggleBtns(true);
                     Livewire.emit('routineSelected', routineId)
                 }
             });
 
-            Livewire.on('routineLoaded', postId => {
-                toggleBtns(true);
-            })
+            //preventing not launching modal when routine is not loaded
+            // Livewire.on('routineLoaded', postId => {
+            //     toggleBtns(true);
+            // })
         }
     });
 </script>

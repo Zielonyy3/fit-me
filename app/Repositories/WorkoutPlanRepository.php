@@ -2,9 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Models\Routine;
+use App\Dtos\AttachRoutineDto;
 use App\Models\WorkoutPlan;
-use App\Repositories\Contracts\RoutineRepositoryContract;
 use App\Repositories\Contracts\WorkoutPlanRepositoryContract;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
@@ -27,6 +26,11 @@ class WorkoutPlanRepository extends BaseRepository implements WorkoutPlanReposit
         }
 
         return $workoutPlans->paginate(perPage($params['per_page'] ?? null), ['*'], 'page', $params['page'] ?? 1);
+    }
+
+    public function attachRoutine(WorkoutPlan $workoutPlan, AttachRoutineDto $attachRoutineDto)
+    {
+        $workoutPlan->routines()->attach($attachRoutineDto->routine_id, $attachRoutineDto->except('routine_id')->toArray());
     }
 
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\PlannedExerciseApiController;
+use App\Http\Controllers\Api\PlannedRoutineApiController;
 use App\Http\Controllers\Api\RoutineApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('routines.planned-exercises', PlannedExerciseApiController::class)->shallow();
+Route::resource('workout-plans.planned-routines', PlannedRoutineApiController::class)->shallow();
 Route::post('/routines/{routine}', [RoutineApiController::class, 'updatePlannedExercises'])->name('routines.update-planned-exercises');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

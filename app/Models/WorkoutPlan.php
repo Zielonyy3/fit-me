@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class WorkoutPlan extends Model
 {
@@ -12,10 +13,13 @@ class WorkoutPlan extends Model
 
     protected $guarded = ['id'];
 
-    public function routines(): BelongsToMany
+    public function plannedRoutines(): HasMany
     {
-        return $this->belongsToMany(Routine::class)
-            ->withPivot('name', 'start_day', 'end_day', 'notes')
-            ->orderBy('start_day');
+        return $this->hasMany(PlannedRoutine::class)->orderBy('start_day');
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
     }
 }

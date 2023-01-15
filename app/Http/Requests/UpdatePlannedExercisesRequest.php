@@ -19,7 +19,7 @@ class UpdatePlannedExercisesRequest extends FormRequest
     {
         return [
             '*.id' => ['nullable', 'numeric'],
-            '*.exercise_id' => ['numeric', 'exists=>exercises,id'],
+            '*.exercise_id' => ['numeric', 'exists:exercises,id'],
             '*.sets' => ['numeric'],
             '*.target_type' => ['required', 'in:' . implode(',', TargetType::getValues())],
             '*.target' => ['numeric'],

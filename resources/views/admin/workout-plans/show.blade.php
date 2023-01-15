@@ -8,7 +8,7 @@
             {!!Form::model($workoutPlan, [
             'method' => 'PATCH',
             'url' => route('workout-plans.update', $workoutPlan),
-            'id' => 'update-routine-form'
+            'id' => 'update-workout-plan-form'
             ]) !!}
         </x-slot:openForm>
 
@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 mt-4 mb-2">
-                        <livewire:workout-plans.planned-routines :workoutPlan="$workoutPlan"/>
+                        <livewire:planned-routines :workoutPlan="$workoutPlan"/>
                     </div>
                 </div>
             </div>
@@ -42,8 +42,8 @@
                 <livewire:search-grid class="App\Http\Livewire\SearchGrids\SearchGridRoutine"
                                       :cardParams="$cardParams"/>
             </div>
-
         </div>
+
         <x-slot:footer>
             <button id="submit-btn" class="btn btn-primary d-flex align-items-center" type="submit">
                 {{__('common.save')}}
@@ -58,7 +58,9 @@
 @endsection
 
 @push('modals')
-    <livewire:workout-plans.add-routine-modal/>
+    <div class="modal modal-blur fade" id="add-routine-modal" tabindex="-1" aria-hidden="true">
+        <livewire:planned-routines.modal :workoutPlan="$workoutPlan"/>
+    </div>
 @endpush
 
 @push('scripts')

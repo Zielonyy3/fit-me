@@ -6,11 +6,15 @@ use App\Repositories\BaseRepository;
 use App\Repositories\Contracts\BaseRepositoryContract;
 use App\Repositories\Contracts\ExerciseRepositoryContract;
 use App\Repositories\Contracts\PlannedExerciseRepositoryContract;
+use App\Repositories\Contracts\PlannedRoutineRepositoryContract;
 use App\Repositories\Contracts\RoutineRepositoryContract;
+use App\Repositories\Contracts\UserRepositoryContract;
 use App\Repositories\Contracts\WorkoutPlanRepositoryContract;
 use App\Repositories\ExerciseRepository;
 use App\Repositories\PlannedExerciseRepository;
+use App\Repositories\PlannedRoutineRepository;
 use App\Repositories\RoutineRepository;
+use App\Repositories\UserRepository;
 use App\Repositories\WorkoutPlanRepository;
 use App\Services\Contracts\RoutineApiServiceContract;
 use App\Services\Contracts\RoutineServiceContract;
@@ -34,6 +38,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(RoutineApiServiceContract::class, RoutineApiService::class);
         $this->app->bind(RoutineServiceContract::class, RoutineService::class);
         $this->app->bind(WorkoutPlanRepositoryContract::class, WorkoutPlanRepository::class);
+        $this->app->bind(PlannedRoutineRepositoryContract::class, PlannedRoutineRepository::class);
+        $this->app->bind(UserRepositoryContract::class, UserRepository::class);
     }
 
     /**

@@ -19,7 +19,6 @@ class RoutineSeeder extends Seeder
 
         $mergedRoutines = $routines->merge(Routine::factory(10)->create());
         foreach ($mergedRoutines as $routine) {
-            print($routine->getKey() . '\n');
             PlannedExercise::factory(7)->create([
                 'routine_id' => $routine->getKey()
             ]);

@@ -17,6 +17,10 @@ window.axios = axios;
 import Sortable from "sortablejs";
 window.Sortable = Sortable;
 
+
+import Select2 from "select2";
+window.Select2 = Select2;
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**

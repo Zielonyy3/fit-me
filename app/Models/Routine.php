@@ -24,8 +24,8 @@ class Routine extends Model
         return $this->hasMany(PlannedExercise::class)->orderBy('order');
     }
 
-    public function workoutPlans(): BelongsToMany
+    public function plannedRoutines(): HasMany
     {
-        return $this->belongsToMany(WorkoutPlan::class);
+        return $this->hasMany(PlannedRoutine::class)->orderBy('start_day');
     }
 }

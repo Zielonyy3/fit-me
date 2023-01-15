@@ -65,7 +65,7 @@
             const plannedExercisesContainer = document.querySelector('#planned-exercises-container')
 
             function getPlannedExercises() {
-                let url = '{{route('routines.planned-exercises.index', $routine)}}'
+                let url = '{{route('api.routines.planned-exercises.index', $routine)}}'
                 $.ajax(url)
                     .done(function (res) {
                         if (res.success) {
@@ -117,7 +117,7 @@
 
                 return new Promise((resolve, reject) => {
                     $.ajax({
-                        url: '{{route('routines.update-planned-exercises', $routine)}}',
+                        url: '{{route('api.routines.update-planned-exercises', $routine)}}',
                         type: 'POST',
                         data: JSON.stringify(getData()),
                     }).done(res => {
@@ -193,7 +193,7 @@
 
             function deletePlannedExercise() {
                 const $button = $(this);
-                let url = '{{route('planned-exercises.update', '__ID__')}}'
+                let url = '{{route('api.planned-exercises.update', '__ID__')}}'
                 const $plannedExercise = $button.closest('.planned-exercise')
                 $plannedExercise.remove();
                 removeDeleteButtonIfEmpty();
