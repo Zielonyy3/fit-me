@@ -1,7 +1,0 @@
-[PHP]
-memory_limit=4096M
-max_execution_time=800
-upload_max_filesize=10000M
-post_max_size=2048M
-[Pcre]
-pcre.backtrack_limit=5000000
