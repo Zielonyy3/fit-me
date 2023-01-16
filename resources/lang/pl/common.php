@@ -44,4 +44,5 @@ return [
     'owner' => 'Właściciel',
     'conversations' => 'Konwersacje',
     'leave' => 'Opuść',
+    'type_your_message' => 'Napisz wiadomość',
 ];

@@ -10881,3 +10881,7 @@ i.ti.mr-0 {
   -moz-appearance: none;
   appearance: none;
 }
+
+.conversation-card.active-card {
+  background-color: rgb(233, 233, 233);
+}

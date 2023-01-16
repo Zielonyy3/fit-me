@@ -1,6 +1,4 @@
-@php
-    $participations = \Chat::conversations()->setParticipant(\Illuminate\Support\Facades\Auth::user())->get();
-@endphp
+@props(['directConversations','selectedConversationId' => null])
 <x-ui.card-container title="{{__('common.conversations')}}">
     <div class="row mb-3">
         <div class="col-12">
@@ -9,10 +7,22 @@
     </div>
     <div class="row">
         <div class="col-12">
-            @foreach($participations as $participation)
-                <x-chats.conversation-card :conversation="$participation->conversation"/>
+            @foreach($directConversations as $conversation)
+                @php($isActive = $conversation->getKey() === $selectedConversationId)
+                <x-chats.conversation-card :is-active="$isActive" :conversation="$conversation"/>
             @endforeach
         </div>
     </div>
 
 </x-ui.card-container>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (e) => {
+        $(document).on('click', '.conversation-card', function () {
+            Livewire.emit('conversationSelected', $(this).attr('data-conversation-id'));
+
+            $('.conversation-card').removeClass('active-card');
+            $(this).addClass('active-card');
+        })
+    });
+</script>
