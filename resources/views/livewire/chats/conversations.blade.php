@@ -1,4 +1,3 @@
-@props(['directConversations','selectedConversationId' => null])
 <x-ui.card-container title="{{__('common.conversations')}}">
     <div class="row mb-3">
         <div class="col-12">
@@ -8,7 +7,7 @@
     <div class="row">
         <div class="col-12">
             @foreach($directConversations as $conversation)
-                @php($isActive = $conversation->getKey() === $selectedConversationId)
+                @php($isActive = $conversation->getKey() === $conversationId)
                 <x-chats.conversation-card :is-active="$isActive" :conversation="$conversation"/>
             @endforeach
         </div>

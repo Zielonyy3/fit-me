@@ -7,19 +7,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="mb-2 col-md-3">
-                <x-chats.conversations
-                    :selectedConversationId="$conversationId"
-                    :directConversations="$directConversations"/>
+                <livewire:chats.conversations/>
             </div>
             <div class="mb-2 col-md-9">
                 <x-ui.card-container
                     title="{{__('common.conversations')}}"
                     card-body-class="p-0">
-                    @if($conversationId)
                         <div class="w-100">
                             <livewire:chats.messages :conversationId="$conversationId"/>
                         </div>
-                    @endif
                     <x-slot:footer>
                         <livewire:chats.form :conversationId="$conversationId" />
                     </x-slot:footer>

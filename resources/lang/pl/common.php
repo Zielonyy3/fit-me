@@ -45,4 +45,5 @@ return [
     'conversations' => 'Konwersacje',
     'leave' => 'Opuść',
     'type_your_message' => 'Napisz wiadomość',
+    'load_older' => 'Załaduj starsze',
 ];

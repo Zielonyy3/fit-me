@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Chats;
 
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Musonza\Chat\Models\Conversation;
 
 class Form extends Component
 {
@@ -16,9 +17,15 @@ class Form extends Component
         $this->conversationId = $id;
     }
 
+    public function markConversationAsRead()
+    {
+        $this->getConversation()->readAll(Auth::user());
+        $this->emit('readConversation');
+    }
+
     public function sendMessage()
     {
-        $conversation = \Chat::conversations()->getById($this->conversationId);
+        $conversation = $this->getConversation();
 
         \Chat::message($this->message)
             ->from(Auth::user())
@@ -34,5 +41,10 @@ class Form extends Component
         return view('livewire.chats.form');
     }
 
+    private function getConversation(): Conversation
+    {
+        return \Chat::conversations()->getById($this->conversationId);
+
+    }
 
 }
