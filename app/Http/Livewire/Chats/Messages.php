@@ -13,27 +13,22 @@ class Messages extends Component
     public ?int $conversationId;
     public bool $isWholeConversationLoaded = false;
     public int $currentPage = 1;
-
     private Conversation $conversation;
     private LengthAwarePaginator $messages;
-
     public function conversationSelected(int $id)
     {
         $this->conversationId = $id;
         $this->currentPage = 1;
         $this->isWholeConversationLoaded = false;
     }
-
     public function sentMessage()
     {
         $this->emit('updatedMessages');
     }
-
     public function incrementPage()
     {
         $this->currentPage++;
     }
-
     public function reload()
     {
         $this->conversation = \Chat::conversations()->getById($this->conversationId);
@@ -47,8 +42,6 @@ class Messages extends Component
             $this->isWholeConversationLoaded = true;
         }
     }
-
-
     public function render()
     {
         $this->reload();

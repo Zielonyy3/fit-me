@@ -1,77 +1,53 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <h2 class="h3 text-center mb-3">
+        {{__('common.sign_up_to_your_account')}}
+    </h2>
+    <form action="./" method="get" autocomplete="off" novalidate="">
+        <div class="mb-3">
+            <label class="form-label">{{__('common.name')}}</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">{{__('common.email_address')}}</label>
+            <input type="email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">{{__('common.password')}}</label>
+            <div class="input-group input-group-flat">
+                <input type="password" class="form-control" placeholder="****" autocomplete="off">
+                <span class="input-group-text">
+                  <a href="#" class="link-secondary" data-bs-toggle="tooltip" aria-label="Show password"
+                     data-bs-original-title="Show password"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                         stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle
+                            cx="12" cy="12" r="2"></circle><path
+                            d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7"></path></svg>
+                  </a>
+                </span>
             </div>
         </div>
-    </div>
-</div>
+        <div class="mb-3">
+            <label class="form-label">{{__('common.confirm_password')}}</label>
+            <div class="input-group input-group-flat">
+                <input type="password" class="form-control" placeholder="****" autocomplete="off">
+                <span class="input-group-text">
+                  <a href="#" class="link-secondary" data-bs-toggle="tooltip" aria-label="Show password"
+                     data-bs-original-title="Show password"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                         stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle
+                            cx="12" cy="12" r="2"></circle><path
+                            d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7"></path></svg>
+                  </a>
+                </span>
+            </div>
+        </div>
+        <div class="form-footer">
+            <button type="submit" class="btn btn-primary w-100">{{__('common.register')}}</button>
+        </div>
+    </form>
+
 @endsection

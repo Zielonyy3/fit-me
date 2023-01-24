@@ -14,13 +14,13 @@ use Illuminate\Http\Request;
 class RoutineApiController extends Controller
 {
 
-    public function __construct(private RoutineApiServiceContract $routineApiServiceContract)
+    public function __construct(private RoutineApiServiceContract $routineApiService)
     {
     }
 
     public function updatePlannedExercises(Routine $routine, UpdatePlannedExercisesRequest $request): JsonResponse
     {
-        $plannedExercises = $this->routineApiServiceContract->updatePlannedExercises($routine, $request->data());
+        $plannedExercises = $this->routineApiService->updatePlannedExercises($routine, $request->data());
         return response()->json([
             'success' => true,
             'data' => PlannedExerciseResource::collection($plannedExercises),

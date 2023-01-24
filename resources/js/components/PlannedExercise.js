@@ -64,6 +64,4 @@ export default class PlannedExercise {
             'rest_time': $el.find('[name="rest_time"]').val(),
         }
     }
-
-
 }

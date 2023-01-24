@@ -21,6 +21,7 @@ window.Sortable = Sortable;
 import Select2 from "select2";
 window.Select2 = Select2;
 
+import Alpine from 'alpinejs'
 window.Alpine = Alpine
 Alpine.start()
 

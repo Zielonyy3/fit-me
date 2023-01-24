@@ -174,18 +174,18 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item"
-                    @class([
-                        'nav-item',
-                        'active' => request()->is('users*')
-                    ]) >
-                    <a class="nav-link" href="{{route('users.index')}}">
-                        <i class="ti ti-cash"></i>
-                        <span class="nav-link-title">
-                            {{__('common.payments')}}
-                        </span>
-                    </a>
-                </li>
+{{--                <li class="nav-item"--}}
+{{--                    @class([--}}
+{{--                        'nav-item',--}}
+{{--                        'active' => request()->is('users*')--}}
+{{--                    ]) >--}}
+{{--                    <a class="nav-link" href="{{route('users.index')}}">--}}
+{{--                        <i class="ti ti-cash"></i>--}}
+{{--                        <span class="nav-link-title">--}}
+{{--                            {{__('common.payments')}}--}}
+{{--                        </span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             </ul>
         </div>
     </div>
