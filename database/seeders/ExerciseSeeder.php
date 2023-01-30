@@ -21,7 +21,7 @@ class ExerciseSeeder extends Seeder
      */
     public function run()
     {
-        $exerciseTypes = json_decode(Storage::get('exercises.json'));
+        $exerciseTypes = json_decode(\File::get(resource_path('data/exercises.json')));
         foreach ($exerciseTypes as $type => $exercises) {
             foreach ($exercises as $exercise) {
                 $exercise = Exercise::factory()->create([
