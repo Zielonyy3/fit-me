@@ -11,7 +11,7 @@ trait AttachRandomImage
 
     public function __construct()
     {
-        $this->exerciseImages = json_decode(Storage::get('exercises-images.json'));
+        $this->exerciseImages = json_decode(\File::get(resource_path('data/exercises-images.json')));
     }
 
 

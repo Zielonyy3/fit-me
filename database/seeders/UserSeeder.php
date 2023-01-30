@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
     private array $profilePictures = [];
     public function run()
     {
-        $this->profilePictures = json_decode(Storage::get('profile-pictures.json'));
+        $this->profilePictures = json_decode(\File::get(resource_path('data/profile-pictures.json')));
 
         $users = User::factory(10)->create();
         foreach ($users as $user) {
