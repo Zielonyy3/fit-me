@@ -26,7 +26,7 @@
 
             </div>
             <div class="col-6 border-left">
-
+                <img src="{{$exercise->preview_image}}" alt="{{$exercise->name}}" class="w-100">
             </div>
 
         </div>

@@ -13,9 +13,8 @@
     class="conversation-card group-label d-flex align-items-center justify-content-between mb-2 cursor-pointer {{$isActive? ' active-card':''}}"
     data-conversation-id="{{$conversation->getKey()}}"
 >
-    {{--                    <span class="avatar me-3" style="background-image: url('{{asset('img/user_profile.jpeg')}}')"></span>--}}
     <span class="avatar avatar-sm avatar-rounded me-3"
-          style="background-image: url('{{asset('img/user_profile.jpeg')}}')"></span>
+          style="background-image: url('{{$participant->profile_picture}}')"></span>
     <div class="d-flex align-items-center justify-content-between flex-grow-1">
         <div class="font-weight-medium">{{$participant->name}}</div>
         {{--        <button class="btn btn-sm btn-danger">{{__('common.leave')}}</button>--}}

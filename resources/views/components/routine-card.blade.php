@@ -4,7 +4,7 @@
     <div class="routine-card card">
         <!-- Photo -->
         <div class="img-responsive img-responsive-21x9 card-img-top"
-             style="background-image: url(https://i.imgur.com/ZTkt4I5.jpg)"></div>
+             style="background-image: url({{$routine->preview_image}})"></div>
         <div class="card-body">
             <h3 class="card-title">{{$routine->name}}</h3>
             @if($showDescription)

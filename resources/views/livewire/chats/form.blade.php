@@ -10,7 +10,7 @@
             wire:model.defer="message"
         >
         <span class="input-group-btn">
-        <button class="btn btn-primary" id="btn-chat" wire:click="sendMessage">Send</button>
+        <button class="btn btn-primary" id="btn-chat" wire:click="sendMessage">{{__('common.send')}}</button>
       </span>
     </div>
 {{--        <div >--}}

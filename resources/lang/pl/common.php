@@ -57,4 +57,8 @@ return [
     'confirm_password' => 'Powtórz hasło',
     'register' => 'Zarejestruj się',
     'sign_up_to_your_account' => 'Zarejestruj się do swojego konta',
+    'logout' => 'Wyloguj się',
+    'image' => 'Obraz',
+    'send' => 'Wyślij',
+    'new_conversation' => 'Nowa konwersacja',
 ];

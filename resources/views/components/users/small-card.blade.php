@@ -1,4 +1,10 @@
-<a class="card card-link" href="#">
+@php
+    /**
+     * @var \App\Models\User $user
+     */
+        $imgUrl = $user->profile_picture ?? null;
+@endphp
+<a class="card card-link" href="{{route('users.show', $user)}}">
     <div class="card-body">
         <div class="row">
             <div class="col-auto">

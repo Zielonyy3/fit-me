@@ -1,7 +1,7 @@
 <x-ui.card-container title="{{__('common.conversations')}}">
     <div class="row mb-3">
         <div class="col-12">
-            <button class="btn btn-primary btn-sm" @click="createConversation()">New Conversation</button>
+            <button class="btn btn-primary btn-sm">{{__('common.new_conversation')}}</button>
         </div>
     </div>
     <div class="row">

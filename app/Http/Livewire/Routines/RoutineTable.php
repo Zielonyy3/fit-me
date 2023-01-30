@@ -17,6 +17,7 @@ class RoutineTable extends DataTableComponent
     {
         $this->setPrimaryKey('id');
         $this->setEmptyMessage(__('common.no_results_found'));
+        $this->setColumnSelectStatus(false);
     }
 
     public function columns(): array
@@ -24,9 +25,9 @@ class RoutineTable extends DataTableComponent
         return [
             Column::make('ID', 'id')
                 ->sortable(),
-            ImageColumn::make('Avatar')
+            ImageColumn::make(__('common.image'))
                 ->location(
-                    fn($row) => asset('img/user_profile.jpeg')
+                    fn($row) => asset($row->previewImage)
                 )
                 ->attributes(fn($row) => [
                     'class' => 'rounded-full',
