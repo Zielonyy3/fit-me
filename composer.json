@@ -13,15 +13,16 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.1",
         "laravelcollective/html": "^6.3",
+        "league/flysystem-aws-s3-v3": "^3.0",
         "livewire/livewire": "^2.10",
         "musonza/chat": "^6.0",
         "rappasoft/laravel-livewire-tables": "^2.9",
         "spatie/data-transfer-object": "^3.9",
-        "spatie/laravel-medialibrary": "^10.0.0"
+        "spatie/laravel-medialibrary": "^10.0.0",
+        "fakerphp/faker": "^1.9.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",
-        "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
