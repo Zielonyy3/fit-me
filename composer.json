@@ -36,9 +36,11 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         },
+        "exclude-from-classmap": ["vendor/musonza/chat/src/Models/Conversation.php"],
         "files" : [
             "app/Helpers/lang.php",
-            "app/Helpers/base.php"
+            "app/Helpers/base.php",
+            "app/Models/musonza/Conversation.php"
         ]
     },
     "autoload-dev": {

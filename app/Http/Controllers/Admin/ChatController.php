@@ -12,7 +12,11 @@ class ChatController extends Controller
 
     public function index(Request $request): View
     {
-        $directConversations= \Chat::conversations()->setParticipant(Auth::user())->isDirect()->get()->pluck('conversation');
+        $directConversations= \Chat::conversations()
+            ->setParticipant(Auth::user())
+            ->isDirect()
+            ->get()
+            ->pluck('conversation');
         return view('admin.chats.index', [
             'directConversations' => $directConversations,
         ]);
