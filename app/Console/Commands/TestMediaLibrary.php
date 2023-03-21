@@ -3,10 +3,13 @@
 namespace App\Console\Commands;
 
 use App\Models\Exercise;
+use Database\Seeders\Traits\AttachRandomImage;
 use Illuminate\Console\Command;
 
 class TestMediaLibrary extends Command
 {
+    use AttachRandomImage;
+
     protected $signature = 'test:media-library';
 
     protected $description = 'Downloads and saves profile pictures in storage/app/profile-pictures.json';
