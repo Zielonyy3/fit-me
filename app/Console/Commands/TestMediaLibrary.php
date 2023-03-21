@@ -8,7 +8,6 @@ use Illuminate\Console\Command;
 
 class TestMediaLibrary extends Command
 {
-    use AttachRandomImage;
 
     protected $signature = 'test:media-library';
 
