@@ -3,17 +3,14 @@
 namespace Database\Seeders;
 
 use App\Models\Exercise;
-use Database\Seeders\Traits\AttachRandomImage;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 
 class ExerciseSeeder extends Seeder
 {
-    use AttachRandomImage;
-
     /**
      * @throws FileCannotBeAdded
      * @throws FileIsTooBig
@@ -34,5 +31,13 @@ class ExerciseSeeder extends Seeder
                     ->toMediaCollection();
             }
         }
+    }
+
+    private function randomImageUrl()
+    {
+        $exerciseImages = json_decode(\File::get(resource_path('data/exercises-images.json')));
+        $faker = Factory::create();
+        $exerciseImage = $faker->randomElement($exerciseImages);
+        return $exerciseImage->src?->medium ?? $exerciseImage->src?->original;
     }
 }
