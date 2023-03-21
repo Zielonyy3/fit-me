@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Exercise;
 use Database\Seeders\Traits\AttachRandomImage;
+use Faker\Factory;
 use Illuminate\Console\Command;
 
 class TestMediaLibrary extends Command
@@ -36,5 +37,13 @@ class TestMediaLibrary extends Command
                 }
             }
         }
+    }
+
+    private function randomImageUrl()
+    {
+        $exerciseImages = json_decode(\File::get(resource_path('data/exercises-images.json')));
+        $faker = Factory::create();
+        $exerciseImage = $faker->randomElement($exerciseImages);
+        return $exerciseImage->src?->medium ?? $exerciseImage->src?->original;
     }
 }
