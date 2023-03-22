@@ -1,5 +1,5 @@
 @props(['user', 'small' => false])
-@if(Auth::user()->getKey() !== $user)
+@if(Auth::user()->getKey() !== $user->getKey())
     {!! Form::open([
                    'method' => 'POST',
                    'url' => route('chats.store', $user),
