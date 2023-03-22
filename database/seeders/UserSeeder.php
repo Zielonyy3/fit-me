@@ -38,7 +38,6 @@ class UserSeeder extends Seeder
             ->toMediaCollection();
         $user->addMediaFromUrl($this->getRandomImageUrl())
             ->toMediaCollection();
-
     }
 
     private function getRandomImageUrl(): string
