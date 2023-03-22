@@ -14,7 +14,8 @@
     data-conversation-id="{{$conversation->getKey()}}"
 >
     <span class="avatar avatar-sm avatar-rounded me-3"
-          style="background-image: url('{{$participant->profile_picture}}')"></span>
+          style="background-image: url('{{$participant->profile_picture}}')">
+    </span>
     <div class="d-flex align-items-center justify-content-between flex-grow-1">
         <div class="font-weight-medium">{{$participant->name}}</div>
         {{--        <button class="btn btn-sm btn-danger">{{__('common.leave')}}</button>--}}
