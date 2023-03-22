@@ -3,11 +3,10 @@
 @section('title', __('common.chat'))
 
 @section('content')
-    @php($conversationId= $directConversations->first()->getKey())
     <div class="container">
         <div class="row justify-content-center">
             <div class="mb-2 col-md-3">
-                <livewire:chats.conversations/>
+                <livewire:chats.conversations :conversationId="$conversationId"/>
             </div>
             <div class="mb-2 col-md-9">
                 <x-ui.card-container

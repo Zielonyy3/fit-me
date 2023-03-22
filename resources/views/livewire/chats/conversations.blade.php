@@ -1,8 +1,8 @@
 <x-ui.card-container title="{{__('common.conversations')}}">
     <div class="row mb-3">
-        <div class="col-12">
-            <button class="btn btn-primary btn-sm">{{__('common.new_conversation')}}</button>
-        </div>
+{{--        <div class="col-12">--}}
+{{--            <button class="btn btn-primary btn-sm">{{__('common.new_conversation')}}</button>--}}
+{{--        </div>--}}
     </div>
     <div class="row">
         <div class="col-12">

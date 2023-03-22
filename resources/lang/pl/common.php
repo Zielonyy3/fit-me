@@ -68,4 +68,6 @@ return [
     'user' => 'Użytkownik',
     'login' => 'Login',
     'avatar' => 'Avatar',
+    'you_cannot_chat_with_yourself' => 'Nie możesz czatować ze samym sobą',
+    'send_message' => 'Wyślij wiadomość',
 ];

@@ -33,7 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('workout-plans', WorkoutPlanController::class);
 
-    Route::get('chats', [ChatController::class, 'index'])->name('chats.index');
+    Route::get('chats/{selectedId?}', [ChatController::class, 'index'])->name('chats.index');
+    Route::post('chats/{user}', [ChatController::class, 'store'])->name('chats.store');
 });
 
 

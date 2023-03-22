@@ -58,6 +58,7 @@
         </x-slot:footer>
         <x-slot:closeForm>
             {!! Form::close() !!}
+            <x-ui.buttons.send-message :user="$user" />
         </x-slot:closeForm>
     </x-ui.card-container>
 @endsection

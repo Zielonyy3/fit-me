@@ -27,6 +27,12 @@ class UserTable extends DataTableComponent
         return [
             Column::make('ID', 'id')
                 ->sortable(),
+            ComponentColumn::make(__('common.send_message'), 'id')
+                ->component('ui.buttons.send-message')
+                ->attributes(fn($value, $row, Column $column) => [
+                    'user' => $row,
+                    'small' => true
+                ]),
             ImageColumn::make(__('common.avatar'))
                 ->location(fn($row) => asset($row->previewImage))
                 ->attributes(fn($row) => [
