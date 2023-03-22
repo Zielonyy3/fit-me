@@ -34,7 +34,7 @@ class UserTable extends DataTableComponent
                     'small' => true
                 ]),
             ImageColumn::make(__('common.avatar'))
-                ->location(fn($row) => asset($row->previewImage))
+                ->location(fn($row) => $row->profile_picture)
                 ->attributes(fn($row) => [
                     'class' => 'rounded-full',
                     'style' => 'width: 30px;',
