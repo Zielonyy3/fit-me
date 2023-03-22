@@ -70,4 +70,9 @@ return [
     'avatar' => 'Avatar',
     'you_cannot_chat_with_yourself' => 'Nie możesz czatować ze samym sobą',
     'send_message' => 'Wyślij wiadomość',
+    'set_status' => 'Wyślij wiadomość',
+    'profile' => 'Profil',
+    'feedback' => 'Feedback',
+    'settings' => 'Feedback',
+    'coach' => 'Trener',
 ];

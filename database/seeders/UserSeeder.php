@@ -26,7 +26,17 @@ class UserSeeder extends Seeder
             'email' => 'admin@fitme.pl',
             'password' => Hash::make('admin.123'),
         ]);
+
+        $user = User::factory()->create([
+            'first_name' => 'Tomasz',
+            'last_name' => 'Użytkownik',
+            'email' => 'user@fitme.pl',
+            'password' => Hash::make('user.123'),
+        ]);
+
         $admin->addMediaFromUrl($this->getRandomImageUrl())
+            ->toMediaCollection();
+        $user->addMediaFromUrl($this->getRandomImageUrl())
             ->toMediaCollection();
 
     }

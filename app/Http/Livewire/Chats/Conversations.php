@@ -21,7 +21,7 @@ class Conversations extends Component
     public function reload()
     {
         $this->directConversations = \Chat::conversations()->setParticipant(Auth::user())->isDirect()->get()->pluck('conversation');
-        if (empty($this->conversationId)) {
+        if (empty($this->conversationId) && $this->directConversations->count()) {
             $this->conversationId = $this->directConversations->first()->getKey();
             $this->emit('conversationSelected', $this->conversationId);
         }

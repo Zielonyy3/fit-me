@@ -38,15 +38,15 @@
                     <span class="avatar avatar-sm" style="background-image: url({{Auth::user()->profile_picture}})"></span>
                     <div class="d-none d-xl-block ps-2">
                         <div>{{Auth::user()->name}}</div>
-                        <div class="mt-1 small text-muted">Coach</div>
+                        <div class="mt-1 small text-muted">{{__('common.coach')}}</div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <a href="#" class="dropdown-item">Set status</a>
-                    <a href="#" class="dropdown-item">Profile &amp; account</a>
-                    <a href="#" class="dropdown-item">Feedback</a>
+                    <a href="#" class="dropdown-item disabled">{{__('common.set_status')}}</a>
+                    <a href="#" class="dropdown-item disabled">{{__('common.profile')}}</a>
+                    <a href="#" class="dropdown-item disabled">{{__('common.profile')}}</a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">Settings</a>
+                    <a href="#" class="dropdown-item disabled">{{__('common.settings')}}</a>
                     {!! Form::open(['route' => 'logout', 'method' => 'POST']) !!}
                     <button class="dropdown-item" type="submit">{{__('common.logout')}}</button>
                     {!! Form::close() !!}

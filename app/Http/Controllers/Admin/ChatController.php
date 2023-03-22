@@ -17,7 +17,12 @@ class ChatController extends Controller
             ->isDirect()
             ->get()
             ->pluck('conversation');
-        $selectedConversationId = $selectedId ?: $directConversations->first()->getKey();
+        $selectedConversationId = null;
+        if($selectedId) {
+            $selectedConversationId = $selectedId;
+        }elseif($directConversations->count()) {
+            $selectedConversationId =  $directConversations->first()->getKey();
+        }
         return view('admin.chats.index', [
             'directConversations' => $directConversations,
             'conversationId' => $selectedConversationId,

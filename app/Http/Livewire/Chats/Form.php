@@ -9,7 +9,7 @@ use Musonza\Chat\Models\Conversation;
 class Form extends Component
 {
     protected $listeners = ['conversationSelected'];
-    public int $conversationId;
+    public ?int $conversationId;
     public string $message;
 
     public function conversationSelected(int $id)
