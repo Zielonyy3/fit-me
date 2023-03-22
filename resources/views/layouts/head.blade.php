@@ -18,6 +18,7 @@
 <link href={{asset('css/tabler.min.css')}} rel="stylesheet">
 <link href={{asset('css/tabler-vendors.min.css')}} rel="stylesheet">
 <link href={{asset('css/select2.min.css')}} rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}" />
 
 @stack('styles')
 <style>
