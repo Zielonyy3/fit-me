@@ -61,4 +61,11 @@ return [
     'image' => 'Obraz',
     'send' => 'Wyślij',
     'new_conversation' => 'Nowa konwersacja',
+    'testing_accounts' => 'Konta testowe',
+    'admin_account' => 'Konto admina',
+    'user_account' => 'Konto użytkownika',
+    'admin' => 'Admin',
+    'user' => 'Użytkownik',
+    'login' => 'Login',
+    'avatar' => 'Avatar',
 ];

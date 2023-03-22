@@ -1,13 +1,13 @@
 @extends('layouts.backend')
 
-@section('title', __('common.edit_routine'))
+@section('title', __('common.edit_exercise'))
 
 @section('content')
     <div class="row">
         {!!Form::model($exercise, [
     'method' => 'PATCH',
     'url' => route('exercises.update', $exercise),
-    'id' => 'update-routine-form'
+    'id' => 'update-exercise-form'
     ]) !!}
         <div class="row">
             <div class="col-6">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group col-12{{ $errors->has('description') ? ' has-error' : ''}}">
                         {!! Form::label('description', __('common.description'), ['class' => 'control-label']) !!}
-                        {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '4']) !!}
+                        {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '6']) !!}
                         {!! $errors->first('description', '<p class="help-block">:message</p>') !!}
                     </div>
                 </div>
@@ -30,7 +30,7 @@
             </div>
 
         </div>
-        <div class="row">
+        <div class="row my-4">
             <div class="col-md-2">
                 <button id="submit-btn" class="btn btn-primary d-flex align-items-center" type="submit">
                     {{__('common.save')}}

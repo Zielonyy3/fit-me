@@ -41,4 +41,26 @@
     <div class="text-center text-muted mt-3">
         {{__('common.don_have_account_yet')}} <a href="./sign-up.html" tabindex="-1">{{__('common.sign_up')}}</a>
     </div>
+    <div class="accordion mt-4" id="accordion-example">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading-1">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-1" aria-expanded="false">
+                    {{__('common.testing_accounts')}}
+                </button>
+            </h2>
+            <div id="collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordion-example" style="">
+                <div class="accordion-body pt-0">
+                    <p><strong>{{__('common.admin')}}:</strong><br>
+                        {{__('common.login')}}: admin@fitme.pl<br>
+                        {{__('common.password')}}: admin.123<br>
+                    </p>
+                    <p><strong>{{__('common.user')}}:</strong><br>
+                        {{__('common.login')}}: user@fitme.pl<br>
+                        {{__('common.password')}}: user.123<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

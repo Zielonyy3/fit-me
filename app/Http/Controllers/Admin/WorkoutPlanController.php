@@ -36,8 +36,19 @@ class WorkoutPlanController extends Controller
     {
         return view('admin.workout-plans.edit', compact('workoutPlan'));
     }
+
     public function show(WorkoutPlan $workoutPlan): View
     {
         return view('admin.workout-plans.show', compact('workoutPlan'));
+    }
+
+
+    public function destroy(WorkoutPlan $workoutPlan): RedirectResponse
+    {
+        $success = $this->workoutPlanRepository->delete($workoutPlan);
+        if ($success) {
+            return back()->with('flash_message', __t('common.workout_plan_deleted', 'Workout plan deleted!'));
+        }
+        return back()->with('error_message', __t('common.workout_plan_not_deleted', 'Workout plan not deleted!'));
     }
 }

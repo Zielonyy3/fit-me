@@ -28,7 +28,7 @@ class RoutineController extends Controller
         return redirect()->route('routines.show', $routine)->with('flash_message', __t('common.routine_added', 'Routine added!'));
     }
 
-    public function update(Routine $routine, RoutineSaveRequest $request)
+    public function update(Routine $routine, RoutineSaveRequest $request): RedirectResponse
     {
         $routine = $this->routineRepository->update($routine, $request->data()->toArray());
         return redirect()->route('routines.show', $routine)->with('flash_message', __t('common.routine_updated', 'Routine updated!'));
@@ -41,5 +41,14 @@ class RoutineController extends Controller
     public function show(Routine $routine): View
     {
         return view('admin.routines.show', compact('routine'));
+    }
+
+    public function destroy(Routine $routine): RedirectResponse
+    {
+        $success = $this->routineRepository->delete($routine);
+        if($success) {
+            return back()->with('flash_message', __t('common.routine_deleted', 'Routine deleted!'));
+        }
+        return back()->with('error_message', __t('common.routine_not_deleted', 'Routine not deleted!'));
     }
 }

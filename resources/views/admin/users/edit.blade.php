@@ -7,8 +7,7 @@
         <x-slot:openForm>
             {!!Form::model($user, [
                 'method' => 'PATCH',
-                'url' => route('routines.update', $user),
-                'id' => 'update-routine-form'
+                'url' => route('users.update', $user),
             ]) !!}
         </x-slot:openForm>
         <div class="row">

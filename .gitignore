@@ -21,4 +21,6 @@ yarn-error.log
 docker-compose.yml
 Dockerfile
 makefile
+.DS_Store
+/storage/*
 
