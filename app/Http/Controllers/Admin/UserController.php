@@ -32,6 +32,10 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
+    public function show(User $user): View
+    {
+        return view('admin.users.edit', compact('user'));
+    }
 
     public function destroy(User $user): RedirectResponse
     {
